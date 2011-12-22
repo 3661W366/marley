@@ -5,7 +5,7 @@ module Marley
     # It will have its actual UI metadata in the global variable '_jamaica_json'
     # and onDocumentReady, this will be turned into the client UI.
     CLIENT_DIR=File.dirname(__FILE__)
-    LIBS = [ 'jquery-1.6.2.js', 'jquery.form.js', 'jamaica.js' ]
+    LIBS = [ 'jquery-1.7.1.min.js', 'jquery.form.js','jquery.jsonml.js' , 'jamaica.js' ]
     STYLES = [ 'jamaica.css' ]
     def initialize(opts={})
       @opts={:name => 'Application',:css => '', :js => ''}.merge(opts)
@@ -29,7 +29,7 @@ module Marley
       <head>
         <title>#{@opts[:app_name]}</title>
         <script type='text/javascript'>var _jamaica_json=#{json}; #{ LIBS.map{ |x| File.new("#{CLIENT_DIR}/" + x).read }.push(@opts[:js]).join("\n") }</script>
-        <style>#{ STYLES.map{ |x| File.new("#{CLIENT_DIR}/" + x).read }.push(@opts[:css]).join("\n") }
+        <style>#{ STYLES.map{ |x| File.new("#{CLIENT_DIR}/" + x).read }.push(@opts[:css]).join("\n") }</style>
       </head>
       <body></body>
       EOHTML

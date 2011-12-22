@@ -10,5 +10,5 @@ MARLEY_LIB=$MARLEY_DIR/lib
 RUBY=ruby
 #RUBY=/opt/local/bin/ruby1.9
 
-RUBYLIB=$MARLEY_LIB $RUBY ./simple_forum.rb run
+RUBYLIB=$MARLEY_LIB $RUBY ./forum.rb run
 
